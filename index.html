@@ -21,6 +21,26 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        <style>
+.reveal {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+</style>
+<style>
+.progress-bar {
+    width: 0;
+    transition: width 2s ease-in-out;
+}
+</style>
+        
     </head>
 
     <body>
@@ -50,7 +70,7 @@
        <!-- About Start -->
         
         
-                <div class="container bg-white py-5">
+                <div class="container bg-white py-5 reveal">
                     <div class="row px-3">
                         <div class="col-12">
                             <h2 class="title position-relative pb-2 mb-4">About Me</h2>
@@ -85,7 +105,7 @@
                 <!-- About End -->
 
   <!-- Education Start -->
-                <div class="container bg-white py-5">
+                <div class="container bg-white py-5 reveal">
                     <div class="row px-3">
                         <div class="col-12">
                             <h2 class="title position-relative pb-2 mb-4">Education</h2>
@@ -95,7 +115,7 @@
                                 <div class="position-relative mb-4">
                                     <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
                                     <h5 class="mb-1">Bachelor in CSE</h5>
-                                    <p class="mb-2">University of Asia Pacific | <small>2024 - 2028 |</small></p>
+                                    <p class="mb-2">University of Asia Pacific | <small>2024 - 2027 |</small></p>
                                     
                                 </div>
                                 <div class="position-relative mb-4">
@@ -107,10 +127,10 @@
                                 <div class="position-relative mb-4">
                                     <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
                                     <h5 class="mb-1">SSC</h5>
-                                    <p class="mb-2">Monipur High School And College| <small>2018 - 2020 |</small></p>
+                                    <p class="mb-2">Monipur High School And College| <small>2018 - 2020|</small></p>
                                     <p>GPA:5.00</p>
                                 </div>
-                                <div class="position-relative mb-4">
+                                 <div class="position-relative mb-4">
                                     <i class="fa fa-arrow-right text-primary position-absolute" style="top: 3px; left: -24px;"></i>
                                     <h5 class="mb-1">JSC</h5>
                                     <p class="mb-2">Monipur High School And College| <small>2017 |</small></p>
@@ -123,7 +143,7 @@
 
 
                <!-- Education Start -->
-                <div class="container bg-white py-5">
+                <div class="container bg-white py-5 reveal">
                     <div class="row px-3">
                         <div class="col-12">
                             <h2 class="title position-relative pb-2 mb-4">Hobbies</h2>
@@ -155,7 +175,7 @@
                 <!-- Education End -->
                 
 <!-- Skills Start -->
-<div class="container bg-white py-5">
+<div class="container bg-white py-5 reveal" id="skills">
   <div class="row px-3">
     <div class="col-12">
       <h2 class="title position-relative pb-2 mb-4">Skills</h2>
@@ -171,7 +191,7 @@
           <p class="mb-2">50%</p>
         </div>
         <div class="progress" style="height:6px;">
-          <div class="progress-bar bg-warning" style="width:50%;"></div>
+          <div class="progress-bar bg-warning" data-width="50%"></div>
         </div>
       </div>
 
@@ -182,7 +202,7 @@
           <p class="mb-2">40%</p>
         </div>
         <div class="progress" style="height:6px;">
-          <div class="progress-bar bg-danger" style="width:40%;"></div>
+          <div class="progress-bar bg-danger" data-width="40%"></div>
         </div>
       </div>
 
@@ -193,7 +213,7 @@
           <p class="mb-2">90%</p>
         </div>
         <div class="progress" style="height:6px;">
-          <div class="progress-bar bg-success" style="width:90%;"></div>
+          <div class="progress-bar bg-success" data-width="90%"></div>
         </div>
       </div>
 
@@ -209,7 +229,7 @@
           <p class="mb-2">70%</p>
         </div>
         <div class="progress" style="height:6px;">
-          <div class="progress-bar" style="width:70%; background-color:black;"></div>
+          <div class="progress-bar" style="background-color:black;" data-width="70%"></div>
         </div>
       </div>
 
@@ -220,7 +240,7 @@
           <p class="mb-2">50%</p>
         </div>
         <div class="progress" style="height:6px;">
-          <div class="progress-bar" style="width:60%; background-color:#007bff;"></div>
+          <div class="progress-bar" style="background-color:#007bff;" data-width="60%"></div>
         </div>
       </div>
 
@@ -231,7 +251,7 @@
           <p class="mb-2">80%</p>
         </div>
         <div class="progress" style="height:6px;">
-          <div class="progress-bar" style="width:80%; background-color:#a423d7;"></div>
+          <div class="progress-bar" style="background-color:#a423d7;" data-width="80%"></div>
         </div>
       </div>
 
@@ -239,8 +259,11 @@
   </div>
 </div>
 <!-- Skills End -->
+<!-- Skills End -->
+
+        
       <!-- Future Goals Start -->
-<div class="container bg-white py-5">
+<div class="container bg-white py-5 reveal">
   <div class="row px-3">
     <div class="col-12">
       <h2 class="title position-relative pb-2 mb-4">Future Goals</h2>
@@ -288,7 +311,54 @@
   </div>
 </div>
 <!-- Future Goals End -->
-       
+     <style>
+.square-img {
+    width: 70%;
+    aspect-ratio: 1 / 1;   /* Square ratio */
+    object-fit: cover;     /* Image crop করে fit করবে */
+}
+</style>
+
+<div class="container bg-white py-5 reveal">
+    <div class="row px-3">
+        <div class="col-12">
+            <h2 class="title position-relative pb-2 mb-4"> Friends</h2>
+        </div>
+        
+
+        <!-- Image 1 -->
+        <div class="col-md-4 col-6 mb-3 text-center">
+            
+            <img src="img/12.jpeg" class="square-img rounded" alt="Friend 1">
+
+            <h5 class="mt-3 mb-1">Auntic Ayon</h5>
+
+            <a href="https://aunticayon01.github.io/myPortfolio2/" target="_blank" class="btn btn-primary btn-sm">
+                View Portfolio
+            </a>
+
+        </div>
+
+        <!-- Image 2 -->
+        <div class="col-md-4 col-6 mb-3 text-center">
+            <img src="img/14.jpeg" class="square-img rounded" alt="Friend 2">
+            <h5 class="mt-3 mb-1">Arafat Hossain</h5>
+            <a href="https://arafatdotcse.github.io/arafat-personal-portfolio/" target="_blank" class="btn btn-primary btn-sm">
+                View Portfolio
+            </a>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="col-md-4 col-6 mb-3 text-center">
+            <img src="img/15.jpeg" class="square-img rounded" alt="Friend 3">
+            <h5 class="mt-3 mb-1">Fahim Shahriar </h5>
+            <a href="https://fahim-fsa.github.io/Portfolio/" target="_blank" class="btn btn-primary btn-sm">
+                View Portfolio
+            </a>
+        </div>
+
+    </div>
+</div>
         <!-- Contact Start -->
         <div class="contact" id="contact">
             <div class="container">
@@ -309,7 +379,7 @@
                             <p><i class="fa fa-envelope"></i><a href="mailto:info@example.com">23201175@uap-bd.edu</a></p>
                             <p><i class="fa fa-phone"></i><a href="tel:+1234567890">01537224378</a></p>
                             <div class="social">
-                                <a href="https://github.com/"><i class="fa fa-github"></i></a>
+                                <a href=""><i class="fa fa-github"></i></a>
                                 <a href="https://www.facebook.com/tahmidur.rahman.7906/about"><i class="fa fa-facebook"></i></a>
                                 <a href="https://www.linkedin.com/feed/"><i class="fa fa-linkedin"></i></a>
                     
@@ -318,32 +388,42 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h4 class="mb-4">If you have any questions or would like to get in touch, please fill out the form below:
-                        
 
+    <h4 class="mb-5">
+        If you have any questions or would like to get in touch,
+        please fill out the form below:
+    </h4>
 
+    <form action="" method="">
+        <div class="row g-3">
             
-                            <form action="" method="">
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <input type="text" class="form-control" placeholder="Your Name" />
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <input type="email" class="form-control" placeholder="Your Email" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Subject" />
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control" rows="5" placeholder="Message"></textarea>
-                                </div>
-                                <div><button type="submit">Send Message</button></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control py-3" placeholder="Your Name">
             </div>
+
+            <div class="col-md-6">
+                <input type="email" class="form-control py-3" placeholder="Your Email">
+            </div>
+
+            <div class="col-12">
+                <input type="text" class="form-control py-3" placeholder="Subject">
+            </div>
+
+            <div class="col-12">
+                <textarea class="form-control py-3" rows="5" placeholder="Message"></textarea>
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-dark px-4 py-2">
+                    Send Message
+                </button>
+            </div>
+
+        </div>
+    </form>
+
+</div>
+
         </div>
         <!-- Contact End -->
 
@@ -355,7 +435,7 @@
 
                     <!--/*** The author’s attribution link must remain intact in the template. ***/-->
                     <!--/*** If you wish to remove this credit link, please purchase the Pro Version . ***/-->
-                    <p>Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    <p>Designed by <a href="https://htmlcodex.com">Tahmidur Rahman</a></p>
                 </div>
             </div>
         </div>
@@ -380,8 +460,48 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script>
+window.addEventListener('scroll', reveal);
+
+function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
+
+    for (var i = 0; i < reveals.length; i++) {
+
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add('active');
+        }
+    }
+}
+
+</script>
+<script>
+window.addEventListener("scroll", function() {
+
+    var skillsSection = document.getElementById("skills");
+    var bars = document.querySelectorAll("#skills .progress-bar");
+
+    var sectionTop = skillsSection.getBoundingClientRect().top;
+    var screenHeight = window.innerHeight;
+
+    if(sectionTop < screenHeight - 100){
+
+        bars.forEach(function(bar){
+
+            if(!bar.classList.contains("animated")){
+                bar.style.width = bar.getAttribute("data-width");
+                bar.classList.add("animated");
+            }
+
+        });
+
+    }
+
+});
+</script>
     </body>
 </html>
-
-
-
